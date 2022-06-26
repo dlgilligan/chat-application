@@ -1,0 +1,28 @@
+{
+  "name": "realtimechat",
+  "version": "1.0.0",
+  "description": "Real Time Chat With NodeJS, Socket.io and ExpressJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart":"nodemon index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "socket.io",
+    "expressJS",
+    "extwiii",
+    "chat",
+    "app"
+  ],
+  "author": "Bilal Cagiran",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.18.1",
+    "jade": "^1.11.0",
+    "socket.io": "^1.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
