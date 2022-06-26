@@ -5,6 +5,7 @@ window.onload =function() {
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     var name = document.getElementById("name");
+    var color = document.getElementById("color");
 
     //message listener
     socket.on('message', function (data) {
@@ -12,7 +13,7 @@ window.onload =function() {
             messages.push(data);
             var html = '';
             for(var i=0; i<messages.length; i++) {
-                html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>';
+                html += '<b><font color='+messages[i].color+'>' + (messages[i].username ? messages[i].username : '<font color = "black">Server</font>') + '</font>: </b>';
                 html += messages[i].message + '<br />';
             }
             content.innerHTML = html;
@@ -27,7 +28,8 @@ window.onload =function() {
             alert("Please type your name!");
         } else {
         var text = field.value;
-        socket.emit('send', { message: text, username: name.value });
+        var color_value = color.value;
+        socket.emit('send', { message: text, username: name.value, color: color_value });
         field.value = '';
         }
     };
